@@ -343,3 +343,9 @@ void PCA9685_servo::setAngularVelocity(double angVel)
 	_SConstantPeriod = time_interval_s * 1e6;
 	_TConstantPeriod = _SConstantPeriod;
 }
+
+/// @brief Stop the servo.
+void PCA9685_servo::stop()
+{
+	_targetAngle = _currentAngle;
+}

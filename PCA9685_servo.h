@@ -16,8 +16,6 @@ public:
 	void setPosition(int8_t angle);						// set the desired position, in degrees
 	void setRelativePosition(int8_t angle);				// set the desired position relative to the current angle, in degrees
 	int8_t getPosition(void);
-	void setRange(int8_t minAngle, int8_t maxAngle);	// set the allowable range of operation, in degrees
-	void setRange(int8_t minAngle, int8_t midAngle, int8_t maxAngle);	// set the allowable range of operation, in degrees
 	int8_t getMinAngle(void);							// return minimum set angle
 	int8_t getMaxAngle(void);							// return mid set point angle
 	int8_t getMidAngle(void);							// return maximum set angle
@@ -31,6 +29,8 @@ public:
 	void setMinAngle(int8_t angle);
 	void setMidAngle(int8_t angle);
 	void setMaxAngle(int8_t angle);
+	void setRange(int8_t minAngle, int8_t maxAngle);	// set the allowable range of operation, in degrees
+	void setRange(int8_t minAngle, int8_t midAngle, int8_t maxAngle);	// set the allowable range of operation, in degrees
 	void setMode(uint8_t Mode);
 	void setTConstantDuration(uint64_t TConstantDuration);	// sets the time constant for the movement duration, in microseconds
 	void setSConstantPeriod(uint64_t SConstantPeriod);		// sets the number of microseconds to move 1 degree
@@ -43,6 +43,7 @@ public:
 
 	void changeSpeedConstT(uint64_t TConstantDuration);		// change speed of the servo in MODE_TCONSTANT mode 
 	void setAngularVelocity(double angVel);					// set the speed of the servo in MODE_SCONSTANT mode deg/s
+	void stop();
 	
 	// callback function pointers
 
@@ -54,7 +55,7 @@ public:
 	/// @brief Function pointer to a function that is to be called when the movement stops.
 	/// @note E.g.
 	/// @note void StopMoveHandler(uint16_t Address) { INTERNAL_LED(0); }
-	/// @note servo.onStopMove = StartMoveHandler;
+	/// @note servo.onStopMove = StopMoveHandler;
 	void (*onStopMove)(uint16_t address) = NULL;
 	
 private:
@@ -84,3 +85,4 @@ private:
 };
 
 #endif
+
