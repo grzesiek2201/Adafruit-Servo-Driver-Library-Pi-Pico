@@ -13,25 +13,21 @@ Copy the repository into your project. Include two files in your main cpp file:
 - <code>#include <PCA9685_servo_driver.h></code>
 - <code>#include <PCA9685_servo.h></code>
 
-### Change your CMakeLists.txt
-Add the library executables: 
+### Change your projects CMakeLists.txt
+Add a subdirectory:
 
-    add_executable(${PROJECT_NAME}
-        main.cpp (your executable file)
-        Adafruit-Servo-Driver-Library-Pi-Pico/PCA9685_servo_driver.cpp
-        Adafruit-Servo-Driver-Library-Pi-Pico/PCA9685_servo.cpp
-    )
+    add_subdirectory(Adafruit-Servo-Driver-Library-Pi-Pico)    # the argument represents a path to the library directory
 
 Then include the library directory:
 
     target_include_directories(${PROJECT_NAME}
-        PRIVATE Adafruit-Servo-Driver-Library-Pi-Pico
+        PRIVATE Adafruit-Servo-Driver-Library-Pi-Pico    # the argument represents a path to the library directory
     )
 
-Lastly, if you haven't already, link the hardware_i2c library:
+Lastly, link the library:
 
     target_link_libraries(${PROJECT_NAME}
-        hardware_i2c
+        Adafruit-Servo-Driver-Library-Pi-Pico    # the argument represents the name of the library, as specified in the CMakeLists.txt in the library directory
     )
 
 ### Create necessary objects
