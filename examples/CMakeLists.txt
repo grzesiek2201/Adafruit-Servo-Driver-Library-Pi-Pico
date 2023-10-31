@@ -17,22 +17,21 @@ pico_sdk_init()
 # Tell CMake where to find the executable source file
 add_executable(${PROJECT_NAME}
     simple_servo.cpp
-    PCA9685_servo_driver.cpp
-    PCA9685_servo.cpp
 )
 
 # Create map/bin/hex/uf2 files
 pico_add_extra_outputs(${PROJECT_NAME})
 
+add_subdirectory(Adafruit-Servo-Driver-Library-Pi-Pico)
+
 target_include_directories(${PROJECT_NAME}
-    PRIVATE pca9685
+    PRIVATE Adafruit-Servo-Driver-Library-Pi-Pico
 )
 
 # Link to pico_stdlib (gpio, time, etc. functions)
 target_link_libraries(${PROJECT_NAME}
-    pico_stdlib
     pico_cyw43_arch_none
-    hardware_i2c
+	Adafruit-Servo-Driver-Library-Pi-Pico
 )
 
 # Enable usb output, disable uart output
