@@ -1,0 +1,356 @@
+\hypertarget{classPCA9685__servo}{}\doxysection{PCA9685\+\_\+servo Class Reference}
+\label{classPCA9685__servo}\index{PCA9685\_servo@{PCA9685\_servo}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPCA9685__servo_a7d5acce7e8168d13b54937745ea90813}{PCA9685\+\_\+servo}} (\mbox{\hyperlink{classPCA9685__servo__driver}{PCA9685\+\_\+servo\+\_\+driver}} $\ast$controller, uint8\+\_\+t channel, uint16\+\_\+t PWMmin=104, uint16\+\_\+t PWMmax=508)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classPCA9685__servo}{PCA9685\+\_\+servo}} constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPCA9685__servo_a71fc2686643dea54fb80c39914e04e2b}{set\+Position}} (int8\+\_\+t angle)
+\begin{DoxyCompactList}\small\item\em Set target position for the servo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPCA9685__servo_a35ae3860f58565f5cccbd56ddfef97a7}{set\+Relative\+Position}} (int8\+\_\+t angle)
+\begin{DoxyCompactList}\small\item\em Set relative target position for the servo (in realtion to current angle). \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{classPCA9685__servo_aac6a286a32b128555972db42acf525d2}{get\+Position}} (void)
+\begin{DoxyCompactList}\small\item\em Get the current angle of the servo. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPCA9685__servo_aa139a209fd70744c7d0c4f485162bf1f}\label{classPCA9685__servo_aa139a209fd70744c7d0c4f485162bf1f}} 
+int8\+\_\+t {\bfseries get\+Min\+Angle} (void)
+\item 
+\mbox{\Hypertarget{classPCA9685__servo_ab17bf51075a48b96b0504c15c1db3a1f}\label{classPCA9685__servo_ab17bf51075a48b96b0504c15c1db3a1f}} 
+int8\+\_\+t {\bfseries get\+Max\+Angle} (void)
+\item 
+\mbox{\Hypertarget{classPCA9685__servo_aa8eb027b1647d3d547d86f2c45842a10}\label{classPCA9685__servo_aa8eb027b1647d3d547d86f2c45842a10}} 
+int8\+\_\+t {\bfseries get\+Mid\+Angle} (void)
+\item 
+\mbox{\Hypertarget{classPCA9685__servo_a56088bd15ce5ad145f580f855d905357}\label{classPCA9685__servo_a56088bd15ce5ad145f580f855d905357}} 
+uint8\+\_\+t {\bfseries get\+Mode} (void)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classPCA9685__servo_a8e9dd989b5a13923571afb267609e4fc}{is\+Moving}} (void)
+\begin{DoxyCompactList}\small\item\em Check if servo is in motion. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPCA9685__servo_a82a761c7a4f08a24ffe009a055a39ccf}\label{classPCA9685__servo_a82a761c7a4f08a24ffe009a055a39ccf}} 
+uint64\+\_\+t {\bfseries get\+TConstant\+Duration} (void)
+\item 
+\mbox{\Hypertarget{classPCA9685__servo_a91f4c47197cab7b38d657cb940912cca}\label{classPCA9685__servo_a91f4c47197cab7b38d657cb940912cca}} 
+uint64\+\_\+t {\bfseries get\+SConstant\+Period} (void)
+\item 
+\mbox{\Hypertarget{classPCA9685__servo_ae034b9969c226952662fbcb7ebe9e32e}\label{classPCA9685__servo_ae034b9969c226952662fbcb7ebe9e32e}} 
+uint16\+\_\+t {\bfseries get\+Address} (void)
+\item 
+\mbox{\Hypertarget{classPCA9685__servo_aec88097ffb80bd6f34694e9ea66fc32e}\label{classPCA9685__servo_aec88097ffb80bd6f34694e9ea66fc32e}} 
+uint8\+\_\+t {\bfseries get\+Invert\+Mode} (void)
+\item 
+\mbox{\Hypertarget{classPCA9685__servo_aab2d924b05625b87e0340b95358b1855}\label{classPCA9685__servo_aab2d924b05625b87e0340b95358b1855}} 
+void {\bfseries set\+Min\+Angle} (int8\+\_\+t angle)
+\item 
+\mbox{\Hypertarget{classPCA9685__servo_a083f695032bcf47fe55d02a5a3ff46d7}\label{classPCA9685__servo_a083f695032bcf47fe55d02a5a3ff46d7}} 
+void {\bfseries set\+Mid\+Angle} (int8\+\_\+t angle)
+\item 
+\mbox{\Hypertarget{classPCA9685__servo_ade9f7ddfba40e5b78ec7abf55593aa6c}\label{classPCA9685__servo_ade9f7ddfba40e5b78ec7abf55593aa6c}} 
+void {\bfseries set\+Max\+Angle} (int8\+\_\+t angle)
+\item 
+\mbox{\Hypertarget{classPCA9685__servo_a36e0d9ce7c81ac9ce318532f933b1321}\label{classPCA9685__servo_a36e0d9ce7c81ac9ce318532f933b1321}} 
+void {\bfseries set\+Range} (int8\+\_\+t min\+Angle, int8\+\_\+t max\+Angle)
+\item 
+\mbox{\Hypertarget{classPCA9685__servo_a8309b70b7341f11f5f691bd598ec9e82}\label{classPCA9685__servo_a8309b70b7341f11f5f691bd598ec9e82}} 
+void {\bfseries set\+Range} (int8\+\_\+t min\+Angle, int8\+\_\+t mid\+Angle, int8\+\_\+t max\+Angle)
+\item 
+void \mbox{\hyperlink{classPCA9685__servo_a3687aa37d2f9d680e77d994ce93b128c}{set\+Mode}} (uint8\+\_\+t Mode)
+\begin{DoxyCompactList}\small\item\em Set movement type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPCA9685__servo_ae97d3c58d0128a67f487bff97b7394d1}{set\+TConstant\+Duration}} (uint64\+\_\+t TConstant\+Duration)
+\begin{DoxyCompactList}\small\item\em Set duration of movement in MODE\+\_\+\+TCONSTANT mode, takes effect only after \mbox{\hyperlink{classPCA9685__servo_a71fc2686643dea54fb80c39914e04e2b}{set\+Position()}} is called. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPCA9685__servo_a24df8d60fedd962555697b001446c915}{set\+SConstant\+Period}} (uint64\+\_\+t SConstant\+Period)
+\begin{DoxyCompactList}\small\item\em Set interval time between each step (changing servo angle) in MODE\+\_\+\+SCONSTANT mode, takes effect only after \mbox{\hyperlink{classPCA9685__servo_a71fc2686643dea54fb80c39914e04e2b}{set\+Position()}} is called. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPCA9685__servo_a4f8b6b79d56c4d6e4704dfe0e6113020}{set\+Address}} (uint16\+\_\+t address)
+\begin{DoxyCompactList}\small\item\em Set the pin number on the PCA9685 the servo is connected to. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPCA9685__servo_af7bc0c088127f4f27eabf239209e6fbe}\label{classPCA9685__servo_af7bc0c088127f4f27eabf239209e6fbe}} 
+void {\bfseries set\+Invert\+Mode} (uint8\+\_\+t invert)
+\item 
+void \mbox{\hyperlink{classPCA9685__servo_af6203fea07186638a696375360784524}{throw\+Servo}} (uint8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Set servo position to its max or min angle value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPCA9685__servo_a1826df3efdd53a86974109680cb7a886}{loop}} (uint64\+\_\+t TEllapsed)
+\begin{DoxyCompactList}\small\item\em Routine to call every loop iteration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPCA9685__servo_addacc5e714cfbc8e65e07fbcafea64a3}{change\+Speed\+ConstT}} (uint64\+\_\+t TConstant\+Duration)
+\begin{DoxyCompactList}\small\item\em Changes the speed of current movement, only use if you want to change the speed in MODE\+\_\+\+TCONSTANT during the movement. Otherwise use set\+TConstant\+Duration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPCA9685__servo_a7f4aeb9e95033770966428e61b80e897}{set\+Angular\+Velocity}} (double ang\+Vel)
+\begin{DoxyCompactList}\small\item\em Changes the angular velocity used in MODE\+\_\+\+SCONSTANT and MODE\+\_\+\+TCONSTANT. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPCA9685__servo_ab8e67676d8b64e56936e5d42f91ddfd2}\label{classPCA9685__servo_ab8e67676d8b64e56936e5d42f91ddfd2}} 
+void \mbox{\hyperlink{classPCA9685__servo_ab8e67676d8b64e56936e5d42f91ddfd2}{stop}} ()
+\begin{DoxyCompactList}\small\item\em Stop the servo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+void($\ast$ \mbox{\hyperlink{classPCA9685__servo_aee57f53ff06f70f84f7b4717d02a96da}{on\+Start\+Move}} )(uint16\+\_\+t address) = NULL
+\begin{DoxyCompactList}\small\item\em Function pointer to a function that is to be called when the movement starts. \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{classPCA9685__servo_a3c515cad4738142a027f5d1c6b249e2e}{on\+Stop\+Move}} )(uint16\+\_\+t address) = NULL
+\begin{DoxyCompactList}\small\item\em Function pointer to a function that is to be called when the movement stops. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPCA9685__servo_a7d5acce7e8168d13b54937745ea90813}\label{classPCA9685__servo_a7d5acce7e8168d13b54937745ea90813}} 
+\index{PCA9685\_servo@{PCA9685\_servo}!PCA9685\_servo@{PCA9685\_servo}}
+\index{PCA9685\_servo@{PCA9685\_servo}!PCA9685\_servo@{PCA9685\_servo}}
+\doxysubsubsection{\texorpdfstring{PCA9685\_servo()}{PCA9685\_servo()}}
+{\footnotesize\ttfamily PCA9685\+\_\+servo\+::\+PCA9685\+\_\+servo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPCA9685__servo__driver}{PCA9685\+\_\+servo\+\_\+driver}} $\ast$}]{controller,  }\item[{uint8\+\_\+t}]{channel,  }\item[{uint16\+\_\+t}]{PWMmin = {\ttfamily 104},  }\item[{uint16\+\_\+t}]{PWMmax = {\ttfamily 508} }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classPCA9685__servo}{PCA9685\+\_\+servo}} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & PCA9685\+\_\+servo\+\_\+controller pointer \\
+\hline
+{\em channel} & channel number of the servo on the PCA9685 \\
+\hline
+{\em PWMmin} & minimal PWM signal for the servo. This is not the minimal pulse width of the servo, but rather the pulse length count. Min and max values usually within (150-\/600) range. \\
+\hline
+{\em PWMmax} & maximal PWM signal for the servo. Just like the PWMmin, to be determined experimentally, by slowly raising the value and checking the motion range. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPCA9685__servo_addacc5e714cfbc8e65e07fbcafea64a3}\label{classPCA9685__servo_addacc5e714cfbc8e65e07fbcafea64a3}} 
+\index{PCA9685\_servo@{PCA9685\_servo}!changeSpeedConstT@{changeSpeedConstT}}
+\index{changeSpeedConstT@{changeSpeedConstT}!PCA9685\_servo@{PCA9685\_servo}}
+\doxysubsubsection{\texorpdfstring{changeSpeedConstT()}{changeSpeedConstT()}}
+{\footnotesize\ttfamily void PCA9685\+\_\+servo\+::change\+Speed\+ConstT (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{TConstant\+Duration }\end{DoxyParamCaption})}
+
+
+
+Changes the speed of current movement, only use if you want to change the speed in MODE\+\_\+\+TCONSTANT during the movement. Otherwise use set\+TConstant\+Duration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em TConstant\+Duration} & is the duration of the movement in microseconds \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPCA9685__servo_aac6a286a32b128555972db42acf525d2}\label{classPCA9685__servo_aac6a286a32b128555972db42acf525d2}} 
+\index{PCA9685\_servo@{PCA9685\_servo}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!PCA9685\_servo@{PCA9685\_servo}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily int8\+\_\+t PCA9685\+\_\+servo\+::get\+Position (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get the current angle of the servo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+current angle of the servo. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPCA9685__servo_a8e9dd989b5a13923571afb267609e4fc}\label{classPCA9685__servo_a8e9dd989b5a13923571afb267609e4fc}} 
+\index{PCA9685\_servo@{PCA9685\_servo}!isMoving@{isMoving}}
+\index{isMoving@{isMoving}!PCA9685\_servo@{PCA9685\_servo}}
+\doxysubsubsection{\texorpdfstring{isMoving()}{isMoving()}}
+{\footnotesize\ttfamily uint8\+\_\+t PCA9685\+\_\+servo\+::is\+Moving (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Check if servo is in motion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if servo in motion, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPCA9685__servo_a1826df3efdd53a86974109680cb7a886}\label{classPCA9685__servo_a1826df3efdd53a86974109680cb7a886}} 
+\index{PCA9685\_servo@{PCA9685\_servo}!loop@{loop}}
+\index{loop@{loop}!PCA9685\_servo@{PCA9685\_servo}}
+\doxysubsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily void PCA9685\+\_\+servo\+::loop (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{TEllapsed }\end{DoxyParamCaption})}
+
+
+
+Routine to call every loop iteration. 
+
+\begin{DoxyNote}{Note}
+Enclose this in a for()/while() loop and call every time, passing TEllapsed argument containing the time passed since \mbox{\hyperlink{classPCA9685__servo_a1826df3efdd53a86974109680cb7a886}{loop()}} was last called. 
+
+E.\+g. 
+
+TNow = time\+\_\+us\+\_\+64(); // time now in microseconds 
+
+TEllapsed = TNow -\/ TPrevious; // time, in microseconds, since the last loop 
+
+TPrevious = TNow; // store this ready for the next loop 
+
+servo.\+loop(\+TEllapsed); 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em TEllapsed} & time since last function call in microseconds \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPCA9685__servo_a4f8b6b79d56c4d6e4704dfe0e6113020}\label{classPCA9685__servo_a4f8b6b79d56c4d6e4704dfe0e6113020}} 
+\index{PCA9685\_servo@{PCA9685\_servo}!setAddress@{setAddress}}
+\index{setAddress@{setAddress}!PCA9685\_servo@{PCA9685\_servo}}
+\doxysubsubsection{\texorpdfstring{setAddress()}{setAddress()}}
+{\footnotesize\ttfamily void PCA9685\+\_\+servo\+::set\+Address (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{address }\end{DoxyParamCaption})}
+
+
+
+Set the pin number on the PCA9685 the servo is connected to. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & pin number (0-\/15) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPCA9685__servo_a7f4aeb9e95033770966428e61b80e897}\label{classPCA9685__servo_a7f4aeb9e95033770966428e61b80e897}} 
+\index{PCA9685\_servo@{PCA9685\_servo}!setAngularVelocity@{setAngularVelocity}}
+\index{setAngularVelocity@{setAngularVelocity}!PCA9685\_servo@{PCA9685\_servo}}
+\doxysubsubsection{\texorpdfstring{setAngularVelocity()}{setAngularVelocity()}}
+{\footnotesize\ttfamily void PCA9685\+\_\+servo\+::set\+Angular\+Velocity (\begin{DoxyParamCaption}\item[{double}]{ang\+Vel }\end{DoxyParamCaption})}
+
+
+
+Changes the angular velocity used in MODE\+\_\+\+SCONSTANT and MODE\+\_\+\+TCONSTANT. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ang\+\_\+vel} & is the angular velocity in degrees/s \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPCA9685__servo_a3687aa37d2f9d680e77d994ce93b128c}\label{classPCA9685__servo_a3687aa37d2f9d680e77d994ce93b128c}} 
+\index{PCA9685\_servo@{PCA9685\_servo}!setMode@{setMode}}
+\index{setMode@{setMode}!PCA9685\_servo@{PCA9685\_servo}}
+\doxysubsubsection{\texorpdfstring{setMode()}{setMode()}}
+{\footnotesize\ttfamily void PCA9685\+\_\+servo\+::set\+Mode (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{mode }\end{DoxyParamCaption})}
+
+
+
+Set movement type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & mode type \{MODE\+\_\+\+FAST, MODE\+\_\+\+TCONSTANT, MODE\+\_\+\+SCONSTANT\} ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPCA9685__servo_a71fc2686643dea54fb80c39914e04e2b}\label{classPCA9685__servo_a71fc2686643dea54fb80c39914e04e2b}} 
+\index{PCA9685\_servo@{PCA9685\_servo}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!PCA9685\_servo@{PCA9685\_servo}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily void PCA9685\+\_\+servo\+::set\+Position (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{angle }\end{DoxyParamCaption})}
+
+
+
+Set target position for the servo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Angle} & target position in degrees \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPCA9685__servo_a35ae3860f58565f5cccbd56ddfef97a7}\label{classPCA9685__servo_a35ae3860f58565f5cccbd56ddfef97a7}} 
+\index{PCA9685\_servo@{PCA9685\_servo}!setRelativePosition@{setRelativePosition}}
+\index{setRelativePosition@{setRelativePosition}!PCA9685\_servo@{PCA9685\_servo}}
+\doxysubsubsection{\texorpdfstring{setRelativePosition()}{setRelativePosition()}}
+{\footnotesize\ttfamily void PCA9685\+\_\+servo\+::set\+Relative\+Position (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{angle }\end{DoxyParamCaption})}
+
+
+
+Set relative target position for the servo (in realtion to current angle). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & relative angle in degrees \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Does not work in MODE\+\_\+\+FAST mode. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classPCA9685__servo_a24df8d60fedd962555697b001446c915}\label{classPCA9685__servo_a24df8d60fedd962555697b001446c915}} 
+\index{PCA9685\_servo@{PCA9685\_servo}!setSConstantPeriod@{setSConstantPeriod}}
+\index{setSConstantPeriod@{setSConstantPeriod}!PCA9685\_servo@{PCA9685\_servo}}
+\doxysubsubsection{\texorpdfstring{setSConstantPeriod()}{setSConstantPeriod()}}
+{\footnotesize\ttfamily void PCA9685\+\_\+servo\+::set\+SConstant\+Period (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{SConstant\+Period }\end{DoxyParamCaption})}
+
+
+
+Set interval time between each step (changing servo angle) in MODE\+\_\+\+SCONSTANT mode, takes effect only after \mbox{\hyperlink{classPCA9685__servo_a71fc2686643dea54fb80c39914e04e2b}{set\+Position()}} is called. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em SConstant\+Period} & interval time in microseconds \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPCA9685__servo_ae97d3c58d0128a67f487bff97b7394d1}\label{classPCA9685__servo_ae97d3c58d0128a67f487bff97b7394d1}} 
+\index{PCA9685\_servo@{PCA9685\_servo}!setTConstantDuration@{setTConstantDuration}}
+\index{setTConstantDuration@{setTConstantDuration}!PCA9685\_servo@{PCA9685\_servo}}
+\doxysubsubsection{\texorpdfstring{setTConstantDuration()}{setTConstantDuration()}}
+{\footnotesize\ttfamily void PCA9685\+\_\+servo\+::set\+TConstant\+Duration (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{TConstant\+Duration }\end{DoxyParamCaption})}
+
+
+
+Set duration of movement in MODE\+\_\+\+TCONSTANT mode, takes effect only after \mbox{\hyperlink{classPCA9685__servo_a71fc2686643dea54fb80c39914e04e2b}{set\+Position()}} is called. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em TConstant\+Duration} & duration of movement in microseconds \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPCA9685__servo_af6203fea07186638a696375360784524}\label{classPCA9685__servo_af6203fea07186638a696375360784524}} 
+\index{PCA9685\_servo@{PCA9685\_servo}!throwServo@{throwServo}}
+\index{throwServo@{throwServo}!PCA9685\_servo@{PCA9685\_servo}}
+\doxysubsubsection{\texorpdfstring{throwServo()}{throwServo()}}
+{\footnotesize\ttfamily void PCA9685\+\_\+servo\+::throw\+Servo (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Set servo position to its max or min angle value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & 0 if movement to max, -\/1 if movement to min. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classPCA9685__servo_aee57f53ff06f70f84f7b4717d02a96da}\label{classPCA9685__servo_aee57f53ff06f70f84f7b4717d02a96da}} 
+\index{PCA9685\_servo@{PCA9685\_servo}!onStartMove@{onStartMove}}
+\index{onStartMove@{onStartMove}!PCA9685\_servo@{PCA9685\_servo}}
+\doxysubsubsection{\texorpdfstring{onStartMove}{onStartMove}}
+{\footnotesize\ttfamily void($\ast$ PCA9685\+\_\+servo\+::on\+Start\+Move) (uint16\+\_\+t address) = NULL}
+
+
+
+Function pointer to a function that is to be called when the movement starts. 
+
+\begin{DoxyNote}{Note}
+E.\+g. 
+
+void Start\+Move\+Handler(uint16\+\_\+t Address) \{ INTERNAL\+\_\+\+LED(1); \} 
+
+servo.\+on\+Start\+Move = Start\+Move\+Handler; 
+\end{DoxyNote}
+\mbox{\Hypertarget{classPCA9685__servo_a3c515cad4738142a027f5d1c6b249e2e}\label{classPCA9685__servo_a3c515cad4738142a027f5d1c6b249e2e}} 
+\index{PCA9685\_servo@{PCA9685\_servo}!onStopMove@{onStopMove}}
+\index{onStopMove@{onStopMove}!PCA9685\_servo@{PCA9685\_servo}}
+\doxysubsubsection{\texorpdfstring{onStopMove}{onStopMove}}
+{\footnotesize\ttfamily void($\ast$ PCA9685\+\_\+servo\+::on\+Stop\+Move) (uint16\+\_\+t address) = NULL}
+
+
+
+Function pointer to a function that is to be called when the movement stops. 
+
+\begin{DoxyNote}{Note}
+E.\+g. 
+
+void Stop\+Move\+Handler(uint16\+\_\+t Address) \{ INTERNAL\+\_\+\+LED(0); \} 
+
+servo.\+on\+Stop\+Move = Stop\+Move\+Handler; 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+PCA9685\+\_\+servo.\+h\item 
+PCA9685\+\_\+servo.\+cpp\end{DoxyCompactItemize}

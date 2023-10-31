@@ -1,0 +1,72 @@
+This is both a port of Adafruit\textquotesingle{}s Arduino library for the PCA9685 (\href{https://github.com/adafruit/Adafruit-PWM-Servo-Driver-Library/tree/master\#adafruit-pca9685-pwm-servo-driver-library-}{\texttt{ Adafruit Library) for the Raspberry Pi Pico board and an improvement on the PCA9685 Servo Controller library for Pi Pico (PCA9685 Servo Controller}}).
+
+Please note it is not a Micropython library (as those have been released by Adafruit \href{https://github.com/adafruit/Adafruit_CircuitPython_PCA9685}{\texttt{ Circuitpython library}}), but a library meant to be used with Pi Pico C/\+C++ SDK.\hypertarget{md_README_autotoc_md1}{}\doxysection{Setup}\label{md_README_autotoc_md1}
+\hypertarget{md_README_autotoc_md2}{}\doxysubsection{Include the headers}\label{md_README_autotoc_md2}
+Copy the repository into your project. Include two files in your main cpp file\+:
+\begin{DoxyItemize}
+\item {\ttfamily \#include $<$\mbox{\hyperlink{PCA9685__servo__driver_8h_source}{PCA9685\+\_\+servo\+\_\+driver.\+h}}$>$}
+\item {\ttfamily \#include $<$\mbox{\hyperlink{PCA9685__servo_8h_source}{PCA9685\+\_\+servo.\+h}}$>$}
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md3}{}\doxysubsection{Change your CMake\+Lists.\+txt}\label{md_README_autotoc_md3}
+Add the library executables\+: \begin{DoxyVerb}add_executable(${PROJECT_NAME}
+    main.cpp (your executable file)
+    Adafruit-Servo-Driver-Library-Pi-Pico/PCA9685_servo_driver.cpp
+    Adafruit-Servo-Driver-Library-Pi-Pico/PCA9685_servo.cpp
+)
+\end{DoxyVerb}
+ Then include the library directory\+: \begin{DoxyVerb}target_include_directories(${PROJECT_NAME}
+    PRIVATE Adafruit-Servo-Driver-Library-Pi-Pico
+)
+\end{DoxyVerb}
+ Lastly, if you haven\textquotesingle{}t already, link the hardware\+\_\+i2c library\+: \begin{DoxyVerb}target_link_libraries(${PROJECT_NAME}
+    hardware_i2c
+)
+\end{DoxyVerb}
+ \hypertarget{md_README_autotoc_md4}{}\doxysubsection{Create necessary objects}\label{md_README_autotoc_md4}
+
+\begin{DoxyItemize}
+\item Create an object of \mbox{\hyperlink{classPCA9685__servo__driver}{PCA9685\+\_\+servo\+\_\+driver}} type to serve as your interface with the PCA9685 board. {\ttfamily \mbox{\hyperlink{classPCA9685__servo__driver}{PCA9685\+\_\+servo\+\_\+driver}} my\+Controller(i2c0);}
+\item Create an object(s) (depending on the number of servos that are being driven) of \mbox{\hyperlink{classPCA9685__servo}{PCA9685\+\_\+servo}} type to keep track of the servo\textquotesingle{}s parameters and movement. {\ttfamily std\+::vector$<$\+PCA9685\+\_\+servo$>$ my\+Servo = \{\mbox{\hyperlink{classPCA9685__servo}{PCA9685\+\_\+servo(\&my\+Controller, 0, 100, 540)}}\};}
+\item Initialize the servo\+:
+\begin{DoxyItemize}
+\item set the angle range with {\ttfamily set\+Range()},
+\item set operation mode with {\ttfamily set\+Mode()},
+\item set initial position with {\ttfamily set\+Position()},
+\item set channel number on the board with {\ttfamily set\+Address()},
+\item set duration of movement in constant time mode with {\ttfamily set\+TConstant\+Duration()}.
+\end{DoxyItemize}
+\item In the main() loop, initialize the connection to the PCA9685 with {\ttfamily my\+Controller.\+begin();}.
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md5}{}\doxysubsection{Create control loop}\label{md_README_autotoc_md5}
+Create a loop in which \mbox{\hyperlink{classPCA9685__servo_a1826df3efdd53a86974109680cb7a886}{PCA9685\+\_\+servo.\+loop()}} method will be called for each of the controlled servos. Into the loop() method pass an argument with time elapsed since last loop iteration (to keep track of when to move the servo). \begin{DoxyVerb}while(1)
+{
+    TEllapsed = TNow - TPrevious;
+    for(auto& servo : myServo) servo.loop(TEllapsed);
+}
+\end{DoxyVerb}
+ \hypertarget{md_README_autotoc_md6}{}\doxysection{How to control the servo}\label{md_README_autotoc_md6}
+\hypertarget{md_README_autotoc_md7}{}\doxysubsection{Movement modes}\label{md_README_autotoc_md7}
+There are 3 modes\+:
+\begin{DoxyItemize}
+\item {\ttfamily MODE\+\_\+\+FAST} -\/ moves to the set position immediately, with maximum speed (part of the \mbox{\hyperlink{classPCA9685__servo}{PCA9685\+\_\+servo}} class as \+\_\+\+TFast\+Duration),
+\item {\ttfamily MODE\+\_\+\+TCONSTANT} -\/ the movement takes exactly \+\_\+\+TConstant\+Duration microseconds, independent of the length of the movement,
+\item {\ttfamily MODE\+\_\+\+SCONSTANT} -\/ the servo moves with a set angular velocity (set with set\+Angular\+Velocity()), which means the servo moves one degree after \+\_\+\+SConstant\+Period microseconds.
+\end{DoxyItemize}
+
+Select a mode with {\ttfamily set\+Mode()} method.\hypertarget{md_README_autotoc_md8}{}\doxysubsection{Set servo position}\label{md_README_autotoc_md8}
+In order to move the servo, it first needs to get its position changed with {\ttfamily set\+Position()} or {\ttfamily set\+Relative\+Position()} methods. The argument passed is the position to move to in degrees. It takes effect immediately.\hypertarget{md_README_autotoc_md9}{}\doxysubsection{Set servo speed or movement time}\label{md_README_autotoc_md9}
+In order to change the speed, use the {\ttfamily set\+Angular\+Velocity()} method, providing velocity in deg/s. It changes the speed in both MODE\+\_\+\+SCONSTANT and MODE\+\_\+\+TCONSTANT modes.
+
+In order to change the movement time, use {\ttfamily change\+Speed\+Const\+T()}.\hypertarget{md_README_autotoc_md10}{}\doxysubsection{Loop through the movement}\label{md_README_autotoc_md10}
+After setting the position, it is necessary to call the {\ttfamily loop()} method repeatedly in order to execute the movement. It needs an argument that counts the time between the last call to the {\ttfamily loop()} and now in microseconds.\hypertarget{md_README_autotoc_md11}{}\doxysection{Other functions}\label{md_README_autotoc_md11}
+\hypertarget{md_README_autotoc_md12}{}\doxysubsection{Servo status}\label{md_README_autotoc_md12}
+Each servo keeps track of itself, it\textquotesingle{}s possible to retrieve these states through e.\+g.\+:
+\begin{DoxyItemize}
+\item {\ttfamily get\+Position()} retrieves current position in degrees,
+\item {\ttfamily is\+Moving()} is the servo moving or not.
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md13}{}\doxysubsection{Callbacks}\label{md_README_autotoc_md13}
+Each servo can call a function on start or end of movement through binding to function pointer. E.\+g. \begin{DoxyVerb}void StopMoveHandler(uint16_t Address) { INTERNAL_LED(0); }
+servo.onStopMove = StopMoveHandler;
+\end{DoxyVerb}
+ \hypertarget{md_README_autotoc_md14}{}\doxysection{PWM Pulse length count}\label{md_README_autotoc_md14}
+In order to properly control the servo, its PWM pulse length count has to be determined. The usual range lies within (100-\/600), but please find the one matching your particular servo. The best way to do this is by manually changing the lower and upper range by a little bit until it matches the (-\/90, 90) degree range.\hypertarget{md_README_autotoc_md15}{}\doxysubsection{Examples}\label{md_README_autotoc_md15}
+A simple example can be found in the {\ttfamily examples} directory alongside a sample CMake\+Lists.\+txt file.\hypertarget{md_README_autotoc_md16}{}\doxysubsection{Problems and bugs}\label{md_README_autotoc_md16}
+At the moment there are not any known problems or bugs, please feel free to report them. 
