@@ -4,6 +4,8 @@ This is both a port of Adafruit's Arduino library for the PCA9685 (<a href=https
 
 Please note it is not a Micropython library (as those have been released by Adafruit <a href=https://github.com/adafruit/Adafruit_CircuitPython_PCA9685>Circuitpython library</a>), but a library meant to be used with Pi Pico C/C++ SDK.
 
+Please find doxygen docs here <a href=https://grzesiek2201.github.io/Adafruit-Servo-Driver-Library-Pi-Pico>Doxygen docs</a>.
+
 ## Setup
 
 ### Include the headers
