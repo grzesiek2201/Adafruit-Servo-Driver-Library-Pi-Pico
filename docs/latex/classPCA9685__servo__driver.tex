@@ -1,0 +1,255 @@
+\hypertarget{classPCA9685__servo__driver}{}\doxysection{PCA9685\+\_\+servo\+\_\+driver Class Reference}
+\label{classPCA9685__servo__driver}\index{PCA9685\_servo\_driver@{PCA9685\_servo\_driver}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPCA9685__servo__driver_a3973c0cff5a1b0c81a1d79450cdeb2b4}{PCA9685\+\_\+servo\+\_\+driver}} (i2c\+\_\+inst\+\_\+t $\ast$i2c=i2c0, uint SDA=0, uint SCL=1, uint8\+\_\+t i2c\+\_\+address=PCA9685\+\_\+\+I2\+C\+\_\+\+ADDRESS)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classPCA9685__servo__driver}{PCA9685\+\_\+servo\+\_\+driver}} constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPCA9685__servo__driver_ab939aa774ad1a225f0832ce779680a9c}{begin}} (uint baudrate=100000)
+\begin{DoxyCompactList}\small\item\em Setups the I2C interface and hardware. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPCA9685__servo__driver_a888b6065fb5e6e6598c4bd5e8c65307f}\label{classPCA9685__servo__driver_a888b6065fb5e6e6598c4bd5e8c65307f}} 
+void \mbox{\hyperlink{classPCA9685__servo__driver_a888b6065fb5e6e6598c4bd5e8c65307f}{reset}} ()
+\begin{DoxyCompactList}\small\item\em Sends a reset command to the PCA9685 chip over I2C. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPCA9685__servo__driver_a3d7d27da29459b85e51c6117206da404}\label{classPCA9685__servo__driver_a3d7d27da29459b85e51c6117206da404}} 
+void \mbox{\hyperlink{classPCA9685__servo__driver_a3d7d27da29459b85e51c6117206da404}{sleep}} ()
+\begin{DoxyCompactList}\small\item\em Puts board into sleep mode. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPCA9685__servo__driver_a1904897fb1c847e074ca507f248d8880}\label{classPCA9685__servo__driver_a1904897fb1c847e074ca507f248d8880}} 
+void \mbox{\hyperlink{classPCA9685__servo__driver_a1904897fb1c847e074ca507f248d8880}{wakeup}} ()
+\begin{DoxyCompactList}\small\item\em Wakes board from sleep. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPCA9685__servo__driver_a004275c3e30059ea89e46a87d180fd6c}{set\+Ext\+Clk}} (uint8\+\_\+t prescale)
+\begin{DoxyCompactList}\small\item\em Sets EXTCLK pin to use the external clock. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPCA9685__servo__driver_ab7828e24121cb72a8dea93b6059fc47b}{set\+PWMFreq}} (float freq)
+\begin{DoxyCompactList}\small\item\em Sets the PWM frequency for the entire chip, up to $\sim$1.6 KHz. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPCA9685__servo__driver_ae82cf76d1c017576e20508e6830516f4}{set\+Output\+Mode}} (bool totempole)
+\begin{DoxyCompactList}\small\item\em Sets the output mode of the PCA9685 to either open drain or push pull / totempole. Warning\+: LEDs with integrated zener diodes should only be driven in open drain mode. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{classPCA9685__servo__driver_ae95b24d07c92da472f84321f30fbe235}{get\+PWM}} (uint8\+\_\+t num, bool off=false)
+\begin{DoxyCompactList}\small\item\em Gets the PWM output of one of the PCA9685 pins. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPCA9685__servo__driver_a7c6185b1e610d5602e4309303f310d89}{set\+PWM}} (uint8\+\_\+t channel, int16\+\_\+t off, int16\+\_\+t on=0)
+\begin{DoxyCompactList}\small\item\em Set a positon based on a supplied PWM value (assumes \char`\"{}on\char`\"{} is at zero, offset applied here) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPCA9685__servo__driver_a5c2d7174c15923fa915056c2c9889619}{set\+Pin}} (uint8\+\_\+t num, uint16\+\_\+t val, bool invert=false)
+\begin{DoxyCompactList}\small\item\em Helper to set pin PWM output. Sets pin without having to deal with on/off tick placement and properly handles a zero value as completely off and 4095 as completely on. Optional invert parameter supports inverting the pulse for sinking to ground. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{classPCA9685__servo__driver_a42a6803e7035fb8c3440579a62ebe94f}{read\+Prescale}} (void)
+\begin{DoxyCompactList}\small\item\em Reads set Prescale from PCA9685. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPCA9685__servo__driver_ab250fe6d5d4acdee705b93e66d0d8313}{set\+Oscillator\+Frequency}} (uint32\+\_\+t freq)
+\begin{DoxyCompactList}\small\item\em Setter for the internally tracked oscillator used for freq calculations. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classPCA9685__servo__driver_a2798cda4f03132601af612d78cb7e598}{get\+Oscillator\+Frequency}} (void)
+\begin{DoxyCompactList}\small\item\em Getter for the internally tracked oscillator used for freq calculations. \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{classPCA9685__servo__driver_ab43248aa8b862a5824657ba0f3cfd459}{map}} (long x, long in\+\_\+min, long in\+\_\+max, long out\+\_\+min, long out\+\_\+max)
+\begin{DoxyCompactList}\small\item\em Utility function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPCA9685__servo__driver_a3973c0cff5a1b0c81a1d79450cdeb2b4}\label{classPCA9685__servo__driver_a3973c0cff5a1b0c81a1d79450cdeb2b4}} 
+\index{PCA9685\_servo\_driver@{PCA9685\_servo\_driver}!PCA9685\_servo\_driver@{PCA9685\_servo\_driver}}
+\index{PCA9685\_servo\_driver@{PCA9685\_servo\_driver}!PCA9685\_servo\_driver@{PCA9685\_servo\_driver}}
+\doxysubsubsection{\texorpdfstring{PCA9685\_servo\_driver()}{PCA9685\_servo\_driver()}}
+{\footnotesize\ttfamily PCA9685\+\_\+servo\+\_\+driver\+::\+PCA9685\+\_\+servo\+\_\+driver (\begin{DoxyParamCaption}\item[{i2c\+\_\+inst\+\_\+t $\ast$}]{i2c = {\ttfamily i2c0},  }\item[{uint}]{SDA = {\ttfamily 0},  }\item[{uint}]{SCL = {\ttfamily 1},  }\item[{uint8\+\_\+t}]{i2c\+\_\+address = {\ttfamily PCA9685\+\_\+I2C\+\_\+ADDRESS} }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classPCA9685__servo__driver}{PCA9685\+\_\+servo\+\_\+driver}} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i2c} & i2c\+\_\+inst\+\_\+t pointer, for Pi Pico usually just \textquotesingle{}i2c0\textquotesingle{} or \textquotesingle{}i2c1\textquotesingle{}, depending on the i2c interface used \\
+\hline
+{\em SDA} & pin number of the SDA connection on the microcontroller \\
+\hline
+{\em SCL} & pin number of the SCL connection on the microcontroller \\
+\hline
+{\em i2c\+\_\+address} & I2c address of the PCA9685, default is 0x40 \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPCA9685__servo__driver_ab939aa774ad1a225f0832ce779680a9c}\label{classPCA9685__servo__driver_ab939aa774ad1a225f0832ce779680a9c}} 
+\index{PCA9685\_servo\_driver@{PCA9685\_servo\_driver}!begin@{begin}}
+\index{begin@{begin}!PCA9685\_servo\_driver@{PCA9685\_servo\_driver}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily void PCA9685\+\_\+servo\+\_\+driver\+::begin (\begin{DoxyParamCaption}\item[{uint}]{baudrate = {\ttfamily 100000} }\end{DoxyParamCaption})}
+
+
+
+Setups the I2C interface and hardware. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em baudrate} & baudrate for the I2C interface \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPCA9685__servo__driver_a2798cda4f03132601af612d78cb7e598}\label{classPCA9685__servo__driver_a2798cda4f03132601af612d78cb7e598}} 
+\index{PCA9685\_servo\_driver@{PCA9685\_servo\_driver}!getOscillatorFrequency@{getOscillatorFrequency}}
+\index{getOscillatorFrequency@{getOscillatorFrequency}!PCA9685\_servo\_driver@{PCA9685\_servo\_driver}}
+\doxysubsubsection{\texorpdfstring{getOscillatorFrequency()}{getOscillatorFrequency()}}
+{\footnotesize\ttfamily uint32\+\_\+t PCA9685\+\_\+servo\+\_\+driver\+::get\+Oscillator\+Frequency (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the internally tracked oscillator used for freq calculations. 
+
+\begin{DoxyReturn}{Returns}
+The frequency the PCA9685 thinks it is running at (it cannot introspect) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPCA9685__servo__driver_ae95b24d07c92da472f84321f30fbe235}\label{classPCA9685__servo__driver_ae95b24d07c92da472f84321f30fbe235}} 
+\index{PCA9685\_servo\_driver@{PCA9685\_servo\_driver}!getPWM@{getPWM}}
+\index{getPWM@{getPWM}!PCA9685\_servo\_driver@{PCA9685\_servo\_driver}}
+\doxysubsubsection{\texorpdfstring{getPWM()}{getPWM()}}
+{\footnotesize\ttfamily uint16\+\_\+t PCA9685\+\_\+servo\+\_\+driver\+::get\+PWM (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{num,  }\item[{bool}]{off = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Gets the PWM output of one of the PCA9685 pins. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & One of the PWM output pins, from 0 to 15 \\
+\hline
+{\em off} & If true, returns PWM OFF value, otherwise PWM ON \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+requested PWM output value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPCA9685__servo__driver_ab43248aa8b862a5824657ba0f3cfd459}\label{classPCA9685__servo__driver_ab43248aa8b862a5824657ba0f3cfd459}} 
+\index{PCA9685\_servo\_driver@{PCA9685\_servo\_driver}!map@{map}}
+\index{map@{map}!PCA9685\_servo\_driver@{PCA9685\_servo\_driver}}
+\doxysubsubsection{\texorpdfstring{map()}{map()}}
+{\footnotesize\ttfamily long PCA9685\+\_\+servo\+\_\+driver\+::map (\begin{DoxyParamCaption}\item[{long}]{x,  }\item[{long}]{in\+\_\+min,  }\item[{long}]{in\+\_\+max,  }\item[{long}]{out\+\_\+min,  }\item[{long}]{out\+\_\+max }\end{DoxyParamCaption})}
+
+
+
+Utility function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+{\em in\+\_\+min} & \\
+\hline
+{\em in\+\_\+max} & \\
+\hline
+{\em out\+\_\+min} & \\
+\hline
+{\em out\+\_\+max} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPCA9685__servo__driver_a42a6803e7035fb8c3440579a62ebe94f}\label{classPCA9685__servo__driver_a42a6803e7035fb8c3440579a62ebe94f}} 
+\index{PCA9685\_servo\_driver@{PCA9685\_servo\_driver}!readPrescale@{readPrescale}}
+\index{readPrescale@{readPrescale}!PCA9685\_servo\_driver@{PCA9685\_servo\_driver}}
+\doxysubsubsection{\texorpdfstring{readPrescale()}{readPrescale()}}
+{\footnotesize\ttfamily uint8\+\_\+t PCA9685\+\_\+servo\+\_\+driver\+::read\+Prescale (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Reads set Prescale from PCA9685. 
+
+\begin{DoxyReturn}{Returns}
+prescale value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPCA9685__servo__driver_a004275c3e30059ea89e46a87d180fd6c}\label{classPCA9685__servo__driver_a004275c3e30059ea89e46a87d180fd6c}} 
+\index{PCA9685\_servo\_driver@{PCA9685\_servo\_driver}!setExtClk@{setExtClk}}
+\index{setExtClk@{setExtClk}!PCA9685\_servo\_driver@{PCA9685\_servo\_driver}}
+\doxysubsubsection{\texorpdfstring{setExtClk()}{setExtClk()}}
+{\footnotesize\ttfamily void PCA9685\+\_\+servo\+\_\+driver\+::set\+Ext\+Clk (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{prescale }\end{DoxyParamCaption})}
+
+
+
+Sets EXTCLK pin to use the external clock. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prescale} & Configures the prescale value to be used by the external clock \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPCA9685__servo__driver_ab250fe6d5d4acdee705b93e66d0d8313}\label{classPCA9685__servo__driver_ab250fe6d5d4acdee705b93e66d0d8313}} 
+\index{PCA9685\_servo\_driver@{PCA9685\_servo\_driver}!setOscillatorFrequency@{setOscillatorFrequency}}
+\index{setOscillatorFrequency@{setOscillatorFrequency}!PCA9685\_servo\_driver@{PCA9685\_servo\_driver}}
+\doxysubsubsection{\texorpdfstring{setOscillatorFrequency()}{setOscillatorFrequency()}}
+{\footnotesize\ttfamily void PCA9685\+\_\+servo\+\_\+driver\+::set\+Oscillator\+Frequency (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{freq }\end{DoxyParamCaption})}
+
+
+
+Setter for the internally tracked oscillator used for freq calculations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em freq} & The frequency the PCA9685 should use for frequency calculations \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPCA9685__servo__driver_ae82cf76d1c017576e20508e6830516f4}\label{classPCA9685__servo__driver_ae82cf76d1c017576e20508e6830516f4}} 
+\index{PCA9685\_servo\_driver@{PCA9685\_servo\_driver}!setOutputMode@{setOutputMode}}
+\index{setOutputMode@{setOutputMode}!PCA9685\_servo\_driver@{PCA9685\_servo\_driver}}
+\doxysubsubsection{\texorpdfstring{setOutputMode()}{setOutputMode()}}
+{\footnotesize\ttfamily void PCA9685\+\_\+servo\+\_\+driver\+::set\+Output\+Mode (\begin{DoxyParamCaption}\item[{bool}]{totempole }\end{DoxyParamCaption})}
+
+
+
+Sets the output mode of the PCA9685 to either open drain or push pull / totempole. Warning\+: LEDs with integrated zener diodes should only be driven in open drain mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em totempole} & Totempole if true, open drain if false. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPCA9685__servo__driver_a5c2d7174c15923fa915056c2c9889619}\label{classPCA9685__servo__driver_a5c2d7174c15923fa915056c2c9889619}} 
+\index{PCA9685\_servo\_driver@{PCA9685\_servo\_driver}!setPin@{setPin}}
+\index{setPin@{setPin}!PCA9685\_servo\_driver@{PCA9685\_servo\_driver}}
+\doxysubsubsection{\texorpdfstring{setPin()}{setPin()}}
+{\footnotesize\ttfamily void PCA9685\+\_\+servo\+\_\+driver\+::set\+Pin (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{num,  }\item[{uint16\+\_\+t}]{val,  }\item[{bool}]{invert = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Helper to set pin PWM output. Sets pin without having to deal with on/off tick placement and properly handles a zero value as completely off and 4095 as completely on. Optional invert parameter supports inverting the pulse for sinking to ground. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & One of the PWM output pins, from 0 to 15 \\
+\hline
+{\em val} & The number of ticks out of 4096 to be active, should be a value from 0 to 4095 inclusive. \\
+\hline
+{\em invert} & If true, inverts the output, defaults to \textquotesingle{}false\textquotesingle{} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPCA9685__servo__driver_a7c6185b1e610d5602e4309303f310d89}\label{classPCA9685__servo__driver_a7c6185b1e610d5602e4309303f310d89}} 
+\index{PCA9685\_servo\_driver@{PCA9685\_servo\_driver}!setPWM@{setPWM}}
+\index{setPWM@{setPWM}!PCA9685\_servo\_driver@{PCA9685\_servo\_driver}}
+\doxysubsubsection{\texorpdfstring{setPWM()}{setPWM()}}
+{\footnotesize\ttfamily void PCA9685\+\_\+servo\+\_\+driver\+::set\+PWM (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel,  }\item[{int16\+\_\+t}]{off,  }\item[{int16\+\_\+t}]{on = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Set a positon based on a supplied PWM value (assumes \char`\"{}on\char`\"{} is at zero, offset applied here) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel} & servo channel on the PCA9685 \\
+\hline
+{\em PWM} & PWM value reflecting the angle \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPCA9685__servo__driver_ab7828e24121cb72a8dea93b6059fc47b}\label{classPCA9685__servo__driver_ab7828e24121cb72a8dea93b6059fc47b}} 
+\index{PCA9685\_servo\_driver@{PCA9685\_servo\_driver}!setPWMFreq@{setPWMFreq}}
+\index{setPWMFreq@{setPWMFreq}!PCA9685\_servo\_driver@{PCA9685\_servo\_driver}}
+\doxysubsubsection{\texorpdfstring{setPWMFreq()}{setPWMFreq()}}
+{\footnotesize\ttfamily void PCA9685\+\_\+servo\+\_\+driver\+::set\+PWMFreq (\begin{DoxyParamCaption}\item[{float}]{freq }\end{DoxyParamCaption})}
+
+
+
+Sets the PWM frequency for the entire chip, up to $\sim$1.6 KHz. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em freq} & Floating point frequency that we will attempt to match \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+PCA9685\+\_\+servo\+\_\+driver.\+h\item 
+PCA9685\+\_\+servo\+\_\+driver.\+cpp\end{DoxyCompactItemize}
