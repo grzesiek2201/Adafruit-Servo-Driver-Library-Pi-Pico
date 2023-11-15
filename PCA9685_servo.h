@@ -14,7 +14,7 @@ class PCA9685_servo
 public:
 	PCA9685_servo(PCA9685_servo_driver *controller, uint8_t channel, uint16_t PWMmin = 104, uint16_t PWMmax = 508);
 	void setPosition(int8_t angle);						// set the desired position, in degrees
-	void setRelativePosition(int8_t angle);				// set the desired position relative to the current angle, in degrees
+	void setRelativePosition(int16_t angle);				// set the desired position relative to the current angle, in degrees
 	int8_t getPosition(void);
 	int8_t getMinAngle(void);							// return minimum set angle
 	int8_t getMaxAngle(void);							// return mid set point angle

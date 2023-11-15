@@ -142,7 +142,7 @@ void PCA9685_servo::setPosition(int8_t angle)
 /// @brief Set relative target position for the servo (in realtion to current angle).
 /// @param angle relative angle in degrees
 /// @note Does not work in MODE_FAST mode.
-void PCA9685_servo::setRelativePosition(int8_t angle)
+void PCA9685_servo::setRelativePosition(int16_t angle)
 {
 	int16_t newAngle = _currentAngle + angle;
 	if (newAngle < _minAngle) newAngle = _minAngle;
